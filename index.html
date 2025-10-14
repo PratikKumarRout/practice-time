@@ -3,30 +3,17 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Beautiful CSS Animations</title>
+  <title>Array Playground</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <h1 class="shiny-text">Grocery UI Magic</h1>
-
-  <button class="glow-btn">Subscribe Now</button>
-
-  <div class="flip-card">
-    <div class="flip-inner">
-      <div class="front">Front</div>
-      <div class="back">Back</div>
-    </div>
-  </div>
-
-  <div class="fade-in">Scroll-triggered fade-in</div>
-
-  <div class="bubble-bg">
-    <div class="bubble" style="left: 20px;"></div>
-    <div class="bubble" style="left: 80px;"></div>
-    <div class="bubble" style="left: 140px;"></div>
-    <div class="bubble" style="left: 200px;"></div>
-  </div>
-
+  <h1>Array Playground</h1>
+  <input type="text" id="inputValue" placeholder="Enter value" />
+  <button onclick="addItem()">Add</button>
+  <button onclick="removeItem()">Remove Last</button>
+  <button onclick="searchItem()">Search</button>
+  <button onclick="reverseArray()">Reverse</button>
+  <div id="arrayDisplay"></div>
   <script src="logic.js"></script>
 </body>
 </html>
