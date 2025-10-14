@@ -3,17 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Array Playground</title>
+  <title>Undo/Redo Editor</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <h1>Array Playground</h1>
-  <input type="text" id="inputValue" placeholder="Enter value" />
-  <button onclick="addItem()">Add</button>
-  <button onclick="removeItem()">Remove Last</button>
-  <button onclick="searchItem()">Search</button>
-  <button onclick="reverseArray()">Reverse</button>
-  <div id="arrayDisplay"></div>
+  <h1>Undo/Redo Text Editor</h1>
+  <textarea id="editor" rows="5" cols="50" oninput="handleInput()"></textarea><br />
+  <button onclick="undo()">Undo</button>
+  <button onclick="redo()">Redo</button>
   <script src="logic.js"></script>
 </body>
 </html>

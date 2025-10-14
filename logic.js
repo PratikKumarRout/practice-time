@@ -1,37 +1,23 @@
-let arr = [];
+let undoStack = [];
+let redoStack = [];
+const editor = document.getElementById("editor");
 
-function renderArray() {
-  const display = document.getElementById("arrayDisplay");
-  display.innerHTML = "";
-  arr.forEach((val, idx) => {
-    const div = document.createElement("div");
-    div.className = "item";
-    div.textContent = val;
-    display.appendChild(div);
-  });
+function handleInput() {
+  undoStack.push(editor.value);
+  redoStack = []; // clear redo stack on new input
 }
 
-function addItem() {
-  const val = document.getElementById("inputValue").value;
-  if (val) {
-    arr.push(val);
-    renderArray();
-    document.getElementById("inputValue").value = "";
+function undo() {
+  if (undoStack.length > 1) {
+    redoStack.push(undoStack.pop());
+    editor.value = undoStack[undoStack.length - 1];
   }
 }
 
-function removeItem() {
-  arr.pop();
-  renderArray();
-}
-
-function searchItem() {
-  const val = document.getElementById("inputValue").value;
-  const idx = arr.indexOf(val);
-  alert(idx !== -1 ? `Found at index ${idx}` : "Not found");
-}
-
-function reverseArray() {
-  arr.reverse();
-  renderArray();
+function redo() {
+  if (redoStack.length > 0) {
+    const redoValue = redoStack.pop();
+    undoStack.push(redoValue);
+    editor.value = redoValue;
+  }
 }
