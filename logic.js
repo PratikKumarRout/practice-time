@@ -1,23 +1,31 @@
-let undoStack = [];
-let redoStack = [];
-const editor = document.getElementById("editor");
+let queue = [];
 
-function handleInput() {
-  undoStack.push(editor.value);
-  redoStack = []; // clear redo stack on new input
+function renderQueue() {
+  const display = document.getElementById("queueDisplay");
+  display.innerHTML = "";
+  queue.forEach(task => {
+    const div = document.createElement("div");
+    div.className = "task";
+    div.textContent = task;
+    display.appendChild(div);
+  });
 }
 
-function undo() {
-  if (undoStack.length > 1) {
-    redoStack.push(undoStack.pop());
-    editor.value = undoStack[undoStack.length - 1];
+function enqueue() {
+  const val = document.getElementById("taskInput").value;
+  if (val) {
+    queue.push(val);
+    renderQueue();
+    document.getElementById("taskInput").value = "";
   }
 }
 
-function redo() {
-  if (redoStack.length > 0) {
-    const redoValue = redoStack.pop();
-    undoStack.push(redoValue);
-    editor.value = redoValue;
+function dequeue() {
+  if (queue.length > 0) {
+    alert(`Processing: ${queue[0]}`);
+    queue.shift();
+    renderQueue();
+  } else {
+    alert("Queue is empty");
   }
 }

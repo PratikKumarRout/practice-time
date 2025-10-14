@@ -5,14 +5,22 @@ body {
   padding: 20px;
 }
 
-textarea {
-  padding: 10px;
-  font-size: 16px;
-  margin-bottom: 10px;
+input, button {
+  padding: 8px;
+  margin: 5px;
 }
 
-button {
-  padding: 8px 12px;
-  margin: 5px;
-  cursor: pointer;
+#queueDisplay {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+.task {
+  padding: 10px 15px;
+  background-color: teal;
+  color: white;
+  border-radius: 4px;
 }
