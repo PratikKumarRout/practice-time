@@ -1,0 +1,42 @@
+body {
+  font-family: sans-serif;
+  background: #f4f4f4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.pie-wrapper {
+  position: relative;
+  width: 200px;
+  height: 200px;
+}
+
+.pie {
+  transform: rotate(-90deg);
+}
+
+.bg {
+  fill: none;
+  stroke: #ddd;
+  stroke-width: 10;
+}
+
+.fill {
+  fill: none;
+  stroke: green;
+  stroke-width: 10;
+  stroke-dasharray: 283;
+  stroke-dashoffset: 283;
+  transition: stroke 0.3s ease;
+}
+
+.counter {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 2rem;
+  font-weight: bold;
+}

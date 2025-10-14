@@ -3,21 +3,17 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>CSS Animation Practice</title>
-  <link rel="stylesheet" href="stylesheet.css" />
+  <title>Pie Chart Counter</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <h1 class="typing-text" id="typing">Welcome to Grocery World</h1>
-
-  <div class="card-container">
-    <div class="card">🥦 Vegetables</div>
-    <div class="card">🍎 Fruits</div>
-    <div class="card">🥛 Dairy</div>
-    <div class="card">🥛 Tea</div>
-    <div class="card">🥛 </div>
+  <div class="pie-wrapper">
+    <svg class="pie" viewBox="0 0 100 100">
+      <circle class="bg" cx="50" cy="50" r="45" />
+      <circle class="fill" cx="50" cy="50" r="45" />
+    </svg>
+    <div class="counter" id="counter">0%</div>
   </div>
-
-  <button class="pulse-btn">Subscribe Now</button>
 
   <script src="logic.js"></script>
 </body>
