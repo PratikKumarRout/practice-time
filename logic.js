@@ -1,14 +1,27 @@
 // challenge 1
-const multiply = (a, b) => a * b;
+let isRunning = true;
 
-const isEven = num => num % 2;
+const task = (name, ms) => new Promise(
+    res => {
+        setTimeout(() => {
+            if (isRunning) {
+                console.log(`${name} completed ! in ${ms}s`);
+                res();
+            }
+        }, ms * 1000);
+    }
+);
 
-const getGreeting = (name) => "Hello " + name;
+async function startSystem() {
+    console.log("system started...");
 
-console.log(multiply(5,5));
-console.log(isEven(3));
-console.log(getGreeting("Boss"));
+    task("task 1", 1);
+    task("task 2", 4);
 
+    setTimeout(() => {
+        console.log("cancel button pressed.");
+        isRunning = false;
+    }, 2000);
+}
 
-
-// challenge 2
+startSystem();
