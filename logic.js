@@ -1,27 +1,8 @@
 // challenge 1
-let isRunning = true;
+const cart = [10, 20, 30, 40];
 
-const task = (name, ms) => new Promise(
-    res => {
-        setTimeout(() => {
-            if (isRunning) {
-                console.log(`${name} completed ! in ${ms}s`);
-                res();
-            }
-        }, ms * 1000);
-    }
-);
+// acc = accumulator (the running total)
+// curr = current item in the loop
+const total = cart.reduce((acc, cur) => acc + cur, 0);
 
-async function startSystem() {
-    console.log("system started...");
-
-    task("task 1", 1);
-    task("task 2", 4);
-
-    setTimeout(() => {
-        console.log("cancel button pressed.");
-        isRunning = false;
-    }, 2000);
-}
-
-startSystem();
+console.log(total); // Should be 100
