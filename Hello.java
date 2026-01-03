@@ -2,36 +2,22 @@
 public class Hello {
 
     public static void main(String[] args) {
-        Guitar gitar = new Guitar();
-        gitar.name = "Fender";
-        System.out.println(gitar.name);
-        gitar.record();
-        gitar.play();
+        SlowThread thread1 = new SlowThread();
+        thread1.start();
+        System.out.println("Main thread is done.");
     }
 }
 
-interface Playable {
-    void play();
-}
-
-interface Recordable {
-    void record();
-}
-
-abstract class Instrument {
-    String name;
-
-}
-
-class Guitar extends Instrument implements Playable, Recordable {
+class SlowThread extends Thread {
     @Override
-    public void play() {
-        System.out.println("playing......");
+    public void run() {
+        for (int i = 0; i < 5; i++) {
+            try {
+                Thread.sleep(1000);
+                System.out.println("Background Count: " + i);
+            } catch (InterruptedException e) {
+                System.out.println("Thread was interrupted.");
+            }
+        }
     }
-
-    @Override
-    public void record() {
-        System.out.println("Recording....");
-    }
-
 }
