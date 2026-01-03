@@ -1,35 +1,48 @@
-// challenge 2
+// challenge 1
 public class Hello {
 
     public static void main(String[] args) {
-        Car myCar = new Car();
-        myCar.speed = 889;
-        myCar.doors = 4;
-        myCar.showSpeed();
-        System.out.println(myCar.doors);
+        Calculator newCal = new Calculator();
+        System.out.println(newCal.add(5, 5));
+        System.out.println(newCal.add(2, 3, 4));
+        System.out.println(newCal.multiply(5, 5));
+        System.out.println(newCal.multiply(5.2, 2.0));
 
-        myCar.move();
-        
+        Printer newPrinter = new Printer();
+        newPrinter.printInfo(50);
+        newPrinter.printInfo("null");
+        newPrinter.printInfo("Tony", 10);
     }
 }
 
-class Vehicle {
-    int speed;
-
-    void showSpeed() {
-        System.out.println(speed);
+class Calculator {
+    int add(int a, int b) {
+        return a + b;
     }
 
-    void move() {
-        System.out.println("Moving.....");
+    int add(int a, int b, int c) {
+        return a + b + c;
+    }
+
+    double multiply(double a, double b) {
+        return a * b;
+    }
+
+    int multiply(int a, int b) {
+        return a * b;
     }
 }
 
-class Car extends Vehicle {
-    int doors;
-
-    void move() {
-        System.out.println("Driving on 4 wheels.....");
+class Printer {
+    void printInfo(String text) {
+        System.out.println(text);
     }
 
+    void printInfo(int number) {
+        System.out.println(number);
+    }
+
+    void printInfo(String text, int number) {
+        System.out.println(text + number);
+    }
 }
