@@ -1,13 +1,21 @@
-//challenge 1
 public class Hello {
     public static void main(String[] args) {
-        Book myBook = new Book();
-        myBook.displayDetails("The book", "Tony");
+        Person person = new Person();
+        person.setName("Tonly");
+        System.out.println(person.getName());
     }
 }
 
-class Book {
-    void displayDetails(String title, String author) {
-        System.out.println("Titile: " + title + " Author: " + author);
+class Person {
+    private String name;
+
+    // getter
+    public String getName() {
+        return name;
     }
+
+    public void setName(String newName) {
+        this.name = newName;
+    }
+
 }
