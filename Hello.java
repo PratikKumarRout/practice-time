@@ -2,47 +2,36 @@
 public class Hello {
 
     public static void main(String[] args) {
-        Dog dog = new Dog();
-        Cat cat = new Cat();
-        WashingMachine wash = new WashingMachine();
-        wash.doWork();
-        wash.turnOn();
-        cat.makeSound();
-        dog.makeSound();
+        Guitar gitar = new Guitar();
+        gitar.name = "Fender";
+        System.out.println(gitar.name);
+        gitar.record();
+        gitar.play();
     }
 }
 
-abstract class Appliance {
-    void turnOn() {
-        System.out.println("Powering on.....");
-    }
-
-    abstract void doWork();
+interface Playable {
+    void play();
 }
 
-class WashingMachine extends Appliance{
+interface Recordable {
+    void record();
+}
+
+abstract class Instrument {
+    String name;
+
+}
+
+class Guitar extends Instrument implements Playable, Recordable {
     @Override
-    void doWork() {
-        System.out.println("Washing clothes......");
+    public void play() {
+        System.out.println("playing......");
     }
-}
 
-abstract class Animal {
-
-    abstract void makeSound();
-
-}
-
-class Cat extends Animal {
     @Override
-    void makeSound() {
-        System.out.println("meow !");
+    public void record() {
+        System.out.println("Recording....");
     }
-}
 
-class Dog extends Animal {
-    @Override
-    void makeSound() {
-        System.out.println("woof!");
-    }
 }
