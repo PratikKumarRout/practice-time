@@ -2,12 +2,47 @@
 public class Hello {
 
     public static void main(String[] args) {
-        System.out.println(MathUtils.square(5));
+        Dog dog = new Dog();
+        Cat cat = new Cat();
+        WashingMachine wash = new WashingMachine();
+        wash.doWork();
+        wash.turnOn();
+        cat.makeSound();
+        dog.makeSound();
     }
 }
 
-class MathUtils {
-    static int square(int num) {
-        return num * num;
+abstract class Appliance {
+    void turnOn() {
+        System.out.println("Powering on.....");
+    }
+
+    abstract void doWork();
+}
+
+class WashingMachine extends Appliance{
+    @Override
+    void doWork() {
+        System.out.println("Washing clothes......");
+    }
+}
+
+abstract class Animal {
+
+    abstract void makeSound();
+
+}
+
+class Cat extends Animal {
+    @Override
+    void makeSound() {
+        System.out.println("meow !");
+    }
+}
+
+class Dog extends Animal {
+    @Override
+    void makeSound() {
+        System.out.println("woof!");
     }
 }
