@@ -1,48 +1,37 @@
-// challenge 1
+// challege 1
 public class Hello {
 
     public static void main(String[] args) {
-        Calculator newCal = new Calculator();
-        System.out.println(newCal.add(5, 5));
-        System.out.println(newCal.add(2, 3, 4));
-        System.out.println(newCal.multiply(5, 5));
-        System.out.println(newCal.multiply(5.2, 2.0));
+        Student s1 = new Student("Tony", 101);
+        Student s2 = new Student("Stark");
+        System.out.println(s1.name + s1.rollNumber);
+        System.out.println(s2.name + s2.rollNumber);
 
-        Printer newPrinter = new Printer();
-        newPrinter.printInfo(50);
-        newPrinter.printInfo("null");
-        newPrinter.printInfo("Tony", 10);
+        Employee e1 = new Employee(1091993);
+        System.out.println(e1.salary);
     }
 }
 
-class Calculator {
-    int add(int a, int b) {
-        return a + b;
-    }
+class Employee {
+    double salary;
 
-    int add(int a, int b, int c) {
-        return a + b + c;
-    }
-
-    double multiply(double a, double b) {
-        return a * b;
-    }
-
-    int multiply(int a, int b) {
-        return a * b;
+    Employee(double salary) {
+        this.salary = salary;
     }
 }
 
-class Printer {
-    void printInfo(String text) {
-        System.out.println(text);
+class Student {
+    String name;
+    int rollNumber;
+
+    Student(String sName, int sRoll) {
+        name = sName;
+        rollNumber = sRoll;
     }
 
-    void printInfo(int number) {
-        System.out.println(number);
+    Student(String sName) {
+        name = sName;
+        rollNumber = 0;
     }
 
-    void printInfo(String text, int number) {
-        System.out.println(text + number);
-    }
 }
