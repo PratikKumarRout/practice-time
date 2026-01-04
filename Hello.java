@@ -1,41 +1,20 @@
-// cahllenge 1
+// challenge 2
 
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.util.Scanner;
+import java.util.Arrays;
+import java.util.List;
 
 public class Hello {
+
     public static void main(String[] args) {
+        List<Integer> nums = Arrays.asList(1, 2, 3, 4, 5, 6);
+        List<String> names = Arrays.asList("Tony", "Peter", "Bruce");
 
-        try {
-            FileWriter writer = new FileWriter("note.txt");
-            writer.write("Your Text Here\n");
-            writer.write("Your Text Here\n");
-            writer.write("Your Text Here\n");
-            writer.close();
+        nums.stream()
+                .filter(n -> n % 2 == 0)
+                .forEach(n -> System.out.println(n));
 
-            FileWriter search = new FileWriter("search.txt");
-            search.write("Java is powerfull.\n");
-            search.write("it's cool\n");
-            search.write("cool to use java\n");
-            search.write("Nice cool Java\n");
-            search.close();
-
-            Scanner reader = new Scanner(new File("search.txt"));
-
-            while (reader.hasNextLine()) {
-                String line = reader.nextLine();
-                if (line.contains("Java")) {
-                    System.out.println(line + " ");
-                }
-            }
-
-            reader.close();
-
-        } catch (IOException e) {
-            System.out.println(e);
-        }
-
+        names.stream()
+                .map(name -> "Hero: " + name)
+                .forEach(name -> System.out.println(name));
     }
 }
