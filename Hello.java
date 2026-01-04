@@ -1,14 +1,29 @@
 // challenge 1
+
+import java.io.File;
+import java.io.FileWriter;
+
 public class Hello {
 
-    static void countdown(int num) {
-        if (num > 0) {
-            System.out.print(num + " ");
-            countdown(num - 1);
-        }
-    }
-
     public static void main(String[] args) {
-        countdown(10);
+        System.out.println("file handleing...");
+        File f = new File("Practice.txt");
+        try {
+            
+            if (!f.exists()) {
+                f.createNewFile();
+                System.out.println("file created successfully.");
+                System.out.println("full path: " + f.getAbsoluteFile());
+            } else {
+                System.out.println("File already exists in this folder.");
+                System.out.println("file size: " + f.length() + " bytes");
+            }
+
+
+
+        } catch (Exception e) {
+            System.out.println("An error occurred while createing file.");
+            e.printStackTrace();
+        }
     }
 }
