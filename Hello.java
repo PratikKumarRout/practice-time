@@ -1,20 +1,32 @@
-// challenge 2
-
-import java.util.Arrays;
-import java.util.List;
+import java.io.File;
+import java.io.FileWriter;
 
 public class Hello {
-
     public static void main(String[] args) {
-        List<Integer> nums = Arrays.asList(1, 2, 3, 4, 5, 6);
-        List<String> names = Arrays.asList("Tony", "Peter", "Bruce");
-
-        nums.stream()
-                .filter(n -> n % 2 == 0)
-                .forEach(n -> System.out.println(n));
-
-        names.stream()
-                .map(name -> "Hero: " + name)
-                .forEach(name -> System.out.println(name));
+        try {
+            File newFile = new File("note.txt");
+            FileWriter writer = new FileWriter(newFile);
+            if (!newFile.exists()) {
+                System.out.println("creating the file...." + newFile.getName());
+                try {
+                    newFile.createNewFile();
+                    System.out.println("file created successfully.");
+                    System.out.println("file path: " + newFile.getAbsolutePath());
+                    writer.write("Hello from java");
+                    writer.close();
+                    System.out.println("file written successfully...");
+                } catch (Exception e) {
+                    System.out.println("can't create file , error.....");
+                }
+            } else {
+                System.out.println("file already exists.....");
+                System.out.println("file path: " + newFile.getAbsolutePath());
+                writer.write("Hello from java....");
+                writer.close();
+                System.out.println("file written done.");
+            }
+        } catch (Exception e) {
+            System.out.println("something not good , error....");
+        }
     }
 }
