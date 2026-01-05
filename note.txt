@@ -1,1 +1,2 @@
-Hello from java....
+Hello from java....ArrayList
+ LinkedLIst
