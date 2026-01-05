@@ -1,5 +1,5 @@
 Hello from java....
 ArrayList
- LinkedLIst
+LinkedLIst
  Set> Hashset>Treeset>linkedHashset
  Map>Hashmap>Treemap>LinkedHashmap 
