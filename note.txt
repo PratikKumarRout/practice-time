@@ -1,2 +1,5 @@
-Hello from java....ArrayList
+Hello from java....
+ArrayList
  LinkedLIst
+ Set> Hashset>Treeset>linkedHashset
+ Map>Hashmap>Treemap>LinkedHashmap 
