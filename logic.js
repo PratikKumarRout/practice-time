@@ -1,8 +1,6 @@
 // challenge 1
-const cart = [10, 20, 30, 40];
+const arr = [9, 8, 1, 2, 3, 3, 4, 5, 10, 5, , 5];
 
-// acc = accumulator (the running total)
-// curr = current item in the loop
-const total = cart.reduce((acc, cur) => acc + cur, 0);
+const removeDuplicate = (arr) => [...new Set(arr.filter(Boolean))];
+console.log(removeDuplicate(arr.sort((a, b) => a - b)));
 
-console.log(total); // Should be 100

@@ -7,6 +7,8 @@ public class Hello {
         try {
             File newFile = new File("note.txt");
             FileWriter writer = new FileWriter(newFile);
+            String[] names = { "Tony", "Stark", "John", "Bob", "Champ", "Alex", "Zelda", "James" };
+            Arrays.sort(names);
             if (!newFile.exists()) {
                 System.out.println("creating the file...." + newFile.getName());
                 try {
@@ -24,11 +26,9 @@ public class Hello {
                 System.out.println("file already exists.....");
                 System.out.println("file path: " + newFile.getAbsolutePath());
                 writer.write("Hello from java....\n");
-                String[] names = { "Tony", "Stark", "John", "Bob", "Champ" };
-                Arrays.sort(names);
                 for (String name : names) {
                     System.out.print(name + " ");
-                    writer.write(name);
+                    writer.write(name + "\n");
                 }
                 writer.close();
                 System.out.println("file written done.");
