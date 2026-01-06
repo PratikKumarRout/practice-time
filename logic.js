@@ -9,4 +9,9 @@ colors.forEach((color, index) => {
     console.log(`${index}: ${color}`);
 });
 
-// for in loop is for objects   
+// for in loop is for objects , gets the key
+const car = { brand: "Tesla", model: "x" };
+for (const key in car) {
+    console.log(key, car[key]);
+
+}
