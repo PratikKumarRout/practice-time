@@ -1,11 +1,13 @@
-// challenge maps
-const fruits = new Map([["apples", 100], ["banana", 200], ["oranges", 400]]);
+// challenge 1
+const letter = (string) => {
+    const freqMap = new Map();
 
-console.log(fruits.get("apples"));
+    for (const char of string) {
+        const currentCount = freqMap.get(char) || 0;
 
-const nums = [1, 2, 3];
-const doubled = nums.map(num => num * 2);
+        freqMap.set(char, currentCount + 1);
+    }
+    return freqMap;
+};
 
-console.log(doubled);
-console.log(nums);
-
+console.log(letter("Hell00000hhhheeeeeooooooo"));
