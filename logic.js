@@ -1,11 +1,12 @@
-// cahllenge 1
-// function that accepts callback funtion
-function processUser(name, callback) {
-    console.log("Processing.....");
-    callback(name);
-}
+// challenge 1
+const flipcoin = new Promise((resolve, reject) => {
+    const isHeads = Math.random() > 0.5;
+    if (isHeads) {
+        resolve("victory! it is heads");
+    } else {
+        reject("Oh no, it is tails.");
+    }
+});
 
-// the callback function itself
-const welcome = (name) => console.log("welcome: " + name);
-
-processUser("Pratik", welcome);
+flipcoin.then((msg) => console.log(msg))
+    .catch((error) => console.log(error));
