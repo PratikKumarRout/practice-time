@@ -8,5 +8,17 @@ const flipcoin = new Promise((resolve, reject) => {
     }
 });
 
-flipcoin.then((msg) => console.log(msg))
-    .catch((error) => console.log(error));
+async function flip() {
+    try {
+        const fp = await flipcoin;
+        console.log(fp);
+
+    } catch (error) {
+        console.log(error);
+        console.log("ohh no try again.");
+        
+
+    }
+}
+
+flip();
