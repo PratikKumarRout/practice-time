@@ -1,9 +1,11 @@
 // cahllenge 1
+// function that accepts callback funtion
 function processUser(name, callback) {
     console.log("Processing.....");
     callback(name);
 }
 
-const welcome = (user) => console.log("welcome: " + user);
+// the callback function itself
+const welcome = (name) => console.log("welcome: " + name);
 
 processUser("Pratik", welcome);
