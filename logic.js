@@ -1,3 +1,9 @@
-const date = new Date().getTime().toString();
+// cahllenge 1
+function processUser(name, callback) {
+    console.log("Processing.....");
+    callback(name);
+}
 
-console.log(date);
+const welcome = (user) => console.log("welcome: " + user);
+
+processUser("Pratik", welcome);
