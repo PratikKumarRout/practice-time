@@ -1,3 +1,3 @@
-const date = new Date().getSeconds().toString();
+const date = new Date().getTime().toString();
 
 console.log(date);
