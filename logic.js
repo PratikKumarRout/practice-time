@@ -1,11 +1,9 @@
 // challenge 1
-async function wrapper() {
-    try {
-        await fetchData();
-    } catch (error) {
-        console.log("Error caught in wrapper.");
+const p = Promise.resolve("success");
 
-    }
-}
+(async () => {
+    const res = await p;
+    console.log(res);
+})();
 
-wrapper().catch(() => console.log("error caught in caller"));
+p.then(res => console.log(`Then: ${res}`));
