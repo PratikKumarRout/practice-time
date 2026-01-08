@@ -1,6 +1,5 @@
 // cahllenge 1
 async function getweather(city) {
-    const apiKey = "18a81887cddc8984d8048e21be2c15b3";
 
     const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
 
