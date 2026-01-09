@@ -1,14 +1,8 @@
 // challenge 1
-const cars = ["saab", "volvo", "bmw"];
+const cars = ["saab", "volvo", "saab", "bmw"];
 
-cars.push("Lemon");
+const car = cars.lastIndexOf("saab");
 
-cars.pop();
+const nodups = cars.find("volvo");
 
-cars.unshift("apple");
-
-cars[0] = "kiwi";
-
-const car = cars.join(" * ");
-
-console.log(car);
+console.log(car + nodups);
