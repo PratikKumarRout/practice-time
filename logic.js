@@ -1,8 +1,6 @@
 // challenge 1
-const cars = ["saab", "volvo", "saab", "bmw"];
+const numbers = [10, 20, 30, 40, 50];
 
-const car = cars.lastIndexOf("saab");
+const strings = ["apple", "banana", "cherry", "date"];
 
-const nodups = cars.find("volvo");
-
-console.log(car + nodups);
+console.log(numbers.pop());
