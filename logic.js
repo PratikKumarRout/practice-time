@@ -1,9 +1,10 @@
 // challenge 1
-const numbers = [10, 20, 30, 40, 50];
+const cars = [
+    { type: "Volvo", year: 2016 },
+    { type: "Saab", year: 2001 },
+    { type: "BMW", year: 2010 }
+];
 
-const strings = ["banana","Apple", "banana", "cherry", "date"];
+const sortedcars = cars.sort();
 
-
-console.log(numbers.sort());
-console.log(strings.sort());
-
+console.log(sortedcars);
