@@ -5,6 +5,12 @@ const cars = [
     { type: "BMW", year: 2010 }
 ];
 
-const sortedcars = cars.sort();
+const car = cars.sort((a, b) => {
+    let x = a.type.toLowerCase();
+    let y = b.type.toLowerCase();
 
-console.log(sortedcars);
+    if (x < y) { return -1; }
+    if (x > y) {return 1;}
+    return 0;
+});
+console.log(car);
