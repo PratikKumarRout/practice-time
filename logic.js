@@ -3,13 +3,14 @@ const cars = ["saab", "volvo", "bmw"];
 
 cars.push("Lemon");
 
-const newcar = cars.length;
+let type = typeof cars;
 
-cars[8] = "mango";
+let newcar = cars.toString();
+
 
 console.log(newcar);
 
-cars.forEach(element => {
-    console.log(element);
+console.log(cars instanceof Array);
 
-});
+console.log(cars);
+console.log(type);
