@@ -3,14 +3,8 @@ const cars = ["saab", "volvo", "bmw"];
 
 cars.push("Lemon");
 
-let type = typeof cars;
+cars.pop();
 
-let newcar = cars.toString();
+const car = cars.join(" * ");
 
-
-console.log(newcar);
-
-console.log(cars instanceof Array);
-
-console.log(cars);
-console.log(type);
+console.log(car);
