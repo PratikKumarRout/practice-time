@@ -6,6 +6,10 @@ const cart = [
     { name: "Notebook", price: 10, category: "Stationery", inStock: true }
 ];
 
-const prductsNmaes = cart.map(element => element.price);
+const prductsNmaes = cart.map(element => element.name);
 
 console.log(prductsNmaes);
+
+const tags = cart.flatMap(item => [item.category, item.name] );
+
+console.log(tags);
