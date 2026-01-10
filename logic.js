@@ -6,10 +6,10 @@ const cart = [
     { name: "Notebook", price: 10, category: "Stationery", inStock: true }
 ];
 
-const prductsNmaes = cart.map(element => element.name);
+const totalPrice = cart.reduce((total, item) => total + item.price, 100);
 
-console.log(prductsNmaes);
+console.log(totalPrice);
 
-const tags = cart.flatMap(item => [item.category, item.name] );
+const reverseNames = cart.reduceRight((acc, item) => acc + item.name + " ", " + ");
 
-console.log(tags);
+console.log(reverseNames);
